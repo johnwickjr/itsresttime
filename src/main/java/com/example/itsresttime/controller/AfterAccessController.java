@@ -1,0 +1,20 @@
+package com.example.itsresttime.controller;
+
+import com.example.itsresttime.service.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
+
+@Controller
+public class AfterAccessController {
+
+    @Autowired
+    private Service service;
+
+    @GetMapping("/get-data")
+    public String getMyData(@RequestHeader("token") String token){
+        if()
+    }
+
+}

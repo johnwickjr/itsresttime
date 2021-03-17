@@ -22,4 +22,8 @@ public class Service {
     public Boolean validateToken(String token) {
         return token.equals(storingToken.getToken());
     }
+
+    public String lookupToken() {
+        return storingToken.getToken();
+    }
 }
