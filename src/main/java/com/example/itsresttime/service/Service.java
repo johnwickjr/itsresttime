@@ -1,6 +1,6 @@
 package com.example.itsresttime.service;
 
-import com.example.itsresttime.util.JWT;
+import com.example.itsresttime.util.generateToken;
 import com.example.itsresttime.util.StoringToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -10,11 +10,11 @@ public class Service {
     @Autowired
     private StoringToken storingToken;
     @Autowired
-    private JWT jwt;
+    private generateToken generateToken;
 
 
     public String generateToken(String name, String email) {
-        String token = jwt.getToken(name, email);
+        String token = generateToken.getToken(name, email);
         storingToken.setToken(token);
         return token;
     }
