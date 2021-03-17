@@ -1,7 +1,8 @@
 package com.example.itsresttime.models;
 
-public class Student {
 
+
+public class Student {
     public Student(String name, String email) {
         this.name = name;
         this.email = email;
@@ -9,6 +10,7 @@ public class Student {
 
     public Student() {
     }
+
 
     private int id;
     private String name;
