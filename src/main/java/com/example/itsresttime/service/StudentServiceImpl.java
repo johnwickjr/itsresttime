@@ -1,5 +1,6 @@
 package com.example.itsresttime.service;
 
+import com.example.itsresttime.models.StuTeaRelation;
 import com.example.itsresttime.models.Student;
 import com.example.itsresttime.repo.StudentDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,5 +73,7 @@ public class StudentServiceImpl implements StudentService {
         return dao.findByNameStartingWith(regex);
     }
 
-
+    public List<StuTeaRelation> getTeacherCourse() {
+        return dao.getTeacherCourse();
+    }
 }

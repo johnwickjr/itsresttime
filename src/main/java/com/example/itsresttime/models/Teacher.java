@@ -14,6 +14,7 @@ public class Teacher {
     private String name;
 
     @OneToMany(mappedBy = "teachers", cascade = CascadeType.ALL)
+
     @JsonManagedReference
     private List<Student> students;
 

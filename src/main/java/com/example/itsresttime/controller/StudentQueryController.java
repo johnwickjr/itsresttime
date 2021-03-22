@@ -1,5 +1,6 @@
 package com.example.itsresttime.controller;
 
+import com.example.itsresttime.models.StuTeaRelation;
 import com.example.itsresttime.models.Student;
 import com.example.itsresttime.repo.StudentDao;
 import com.example.itsresttime.service.StudentServiceImpl;
@@ -35,6 +36,13 @@ public class StudentQueryController {
     @GetMapping("/student-by-name-start/{name}")
     public List<Student> getStudentByNameStartWith(@PathVariable("name") String name) {
         return service.findByNameStartingWith(name);
+    }
+
+
+    @GetMapping("/get-teacher-course")
+    public List<StuTeaRelation> getTeacherCourse() {
+
+        return service.getTeacherCourse();
     }
 
 
