@@ -14,13 +14,20 @@ public class Student {
     private String email;
     private String course;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JsonBackReference
-    private List<Teacher> teachers;
+    private Teacher teachers;
 
     public Student() {
     }
 
+
+    public Student(String name, String email, String course, Teacher teachers) {
+        this.name = name;
+        this.email = email;
+        this.course = course;
+        this.teachers = teachers;
+    }
 
     public Student(String name, String email, String course) {
         this.name = name;
@@ -28,11 +35,11 @@ public class Student {
         this.course = course;
     }
 
-    public List<Teacher> getTeachers() {
+    public Teacher getTeachers() {
         return teachers;
     }
 
-    public void setTeachers(List<Teacher> teachers) {
+    public void setTeachers(Teacher teachers) {
         this.teachers = teachers;
     }
 

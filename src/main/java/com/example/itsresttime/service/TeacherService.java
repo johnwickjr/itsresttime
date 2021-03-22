@@ -13,4 +13,12 @@ public class TeacherService {
     public void save(Teacher teacher) {
         teacherDao.save(teacher);
     }
+
+    public Teacher getTeacherByName(String name) {
+        return teacherDao.getTeacherByName(name);
+    }
+
+    public Teacher findByName(String name) {
+        return teacherDao.getTeacherByName(name);
+    }
 }

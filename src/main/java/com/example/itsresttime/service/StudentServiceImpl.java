@@ -56,4 +56,21 @@ public class StudentServiceImpl implements StudentService {
         return student.orElse(null);
     }
 
+    public List<Student> findByNameAndCourse(String name, String course) {
+        return dao.findByNameAndCourse(name, course);
+    }
+
+    public List<Student> findByNameOrCourse(String name, String course) {
+        return dao.findByNameOrCourse(name, course);
+    }
+
+    public List<Student> findByNameLike(String regex) {
+        return dao.findByNameLike(regex);
+    }
+
+    public List<Student> findByNameStartingWith(String regex) {
+        return dao.findByNameStartingWith(regex);
+    }
+
+
 }
