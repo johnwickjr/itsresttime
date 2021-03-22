@@ -1,5 +1,7 @@
 package com.example.itsresttime.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -11,12 +13,12 @@ public class Teacher {
     private int id;
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "teachers", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Student> students;
 
-    public Teacher(String name, List<Student> students) {
+    public Teacher(String name) {
         this.name = name;
-        this.students = students;
     }
 
     public Teacher() {

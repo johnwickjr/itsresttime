@@ -1,9 +1,9 @@
 package com.example.itsresttime.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Student {
@@ -14,13 +14,26 @@ public class Student {
     private String email;
     private String course;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JsonBackReference
+    private List<Teacher> teachers;
+
     public Student() {
     }
+
 
     public Student(String name, String email, String course) {
         this.name = name;
         this.email = email;
         this.course = course;
+    }
+
+    public List<Teacher> getTeachers() {
+        return teachers;
+    }
+
+    public void setTeachers(List<Teacher> teachers) {
+        this.teachers = teachers;
     }
 
     public int getId() {
