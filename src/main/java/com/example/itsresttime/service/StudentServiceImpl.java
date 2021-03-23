@@ -41,7 +41,6 @@ public class StudentServiceImpl implements StudentService {
         return code;
     }
 
-
     public boolean deleteStudent(int id) {
         Student student = getUserIfExist(id);
         if (student != null) {
@@ -50,7 +49,6 @@ public class StudentServiceImpl implements StudentService {
         }
         return false;
     }
-
 
     public Student getUserIfExist(int id) {
         Optional<Student> student = dao.findById(id);
@@ -76,4 +74,8 @@ public class StudentServiceImpl implements StudentService {
     public List<StuTeaRelation> getTeacherCourse() {
         return dao.getTeacherCourse();
     }
+
+//    public String stringTesting() {
+//        return dao.testingString();
+//    }
 }

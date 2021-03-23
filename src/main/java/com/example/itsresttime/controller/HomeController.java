@@ -3,15 +3,25 @@ package com.example.itsresttime.controller;
 import com.example.itsresttime.models.Student;
 import com.example.itsresttime.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class HomeController {
 
+    @Value("${name_here}")
+    private String name;
+
+    @Value("${list_here}")
+    private List<String> data;
+
+    @Value("#{${map_here}}")
+    private Map<String, String> map_here;
     @Autowired
     private StudentService service;
 
@@ -63,5 +73,10 @@ public class HomeController {
             return ResponseEntity.ok().build();
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
+
+    @GetMapping("/testing-values")
+    public String testing() {
+        return name + " -> " + data + "->" + map_here;
     }
 }

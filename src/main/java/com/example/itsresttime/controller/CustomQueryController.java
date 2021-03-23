@@ -41,9 +41,9 @@ public class CustomQueryController {
         return service.getTeacherByName(name);
     }
 
-    @GetMapping("/find-by-name/{name}")
-    public Teacher findByName(@PathVariable("name") String name) {
-        return service.getTeacherByName(name);
-    }
+//    @GetMapping("/find-by-name/{name}")
+//    public Teacher findByName(@PathVariable("name") String name) {
+//        return service.getTeacherByName(name);
+//    }
 
 }

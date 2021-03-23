@@ -22,4 +22,7 @@ public interface StudentDao extends JpaRepository<Student, Integer> {
     @Query("select new com.example.itsresttime.models.StuTeaRelation(t.name,s.course) from Teacher t JOIN t.students s")
     List<StuTeaRelation> getTeacherCourse();
 
+//    @Query("select t.name,s,course from Teacher t JOIN t.student s")
+//    String testingString();
+
 }

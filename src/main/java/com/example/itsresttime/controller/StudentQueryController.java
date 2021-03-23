@@ -2,7 +2,6 @@ package com.example.itsresttime.controller;
 
 import com.example.itsresttime.models.StuTeaRelation;
 import com.example.itsresttime.models.Student;
-import com.example.itsresttime.repo.StudentDao;
 import com.example.itsresttime.service.StudentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,5 +44,9 @@ public class StudentQueryController {
         return service.getTeacherCourse();
     }
 
+//    @GetMapping("/testing-string")
+//    public String testingString() {
+//        return service.stringTesting();
+//    }
 
 }
