@@ -2,7 +2,6 @@ package com.example.itsresttime.controller;
 
 import com.example.itsresttime.models.Student;
 import com.example.itsresttime.models.Teacher;
-import com.example.itsresttime.service.TeacherDao;
 import com.example.itsresttime.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

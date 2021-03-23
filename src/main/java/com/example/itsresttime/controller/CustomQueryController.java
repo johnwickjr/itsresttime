@@ -45,4 +45,5 @@ public class CustomQueryController {
     public Teacher findByName(@PathVariable("name") String name) {
         return service.getTeacherByName(name);
     }
+
 }

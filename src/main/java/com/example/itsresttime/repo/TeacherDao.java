@@ -1,4 +1,4 @@
-package com.example.itsresttime.service;
+package com.example.itsresttime.repo;
 
 import com.example.itsresttime.models.Teacher;
 import org.springframework.beans.factory.annotation.Autowired;
